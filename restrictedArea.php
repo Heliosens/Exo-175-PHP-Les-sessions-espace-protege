@@ -1,8 +1,7 @@
 <?php
 session_start();
-
-if(isset($_POST['userPwd'])){
-    $_POST['pwd'] !== "le mot" ? header('Location: /index?error=1') : null;
+if(!isset($_SESSION['status']) || $_SESSION['status'] === 'error'){
+    header('Location: /index.php');
 }
 ?>
 <!doctype html>

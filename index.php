@@ -12,9 +12,13 @@ session_start();
 </head>
 <body>
     <h1>Home</h1>
-    <form action="restrictedArea.php" method="post">
+    <form action="checkAccess.php" method="post">
         <input type="password" name="pwd" placeholder="mot de passe">
         <input type="submit" name="userPwd">
     </form>
 </body>
 </html>
+<?php
+if(isset($_SESSION['status'])){
+    echo $_SESSION['status'] === "error" ? "le mot de passe est incorrect" : "";
+}
